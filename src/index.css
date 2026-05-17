@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+
+.header{
+  margin: 2rem 0;
+  text-align: center;
+}
+
+
+.chat{
+  /* height: 200px; */
+  background-color: rgb(241, 241, 241);
+  
+  padding: 1rem;
+
+}
+
+.post{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+  .info-user{
+    margin: 5%;
+    text-align: center;
+  } 
+  
+  i{
+    font-size: 3rem;
+  }
+
+  .info-post{
+
+    .title{
+      display: flex;
+      
+      h4{
+        margin-left: 5%;
+        color: rgb(185, 3, 3);
+      }
+    }
+  } 
+}
+
+
+.input-chat{
+
+  padding: 3rem;
+
+  .element{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+
+    input{
+      padding: 5px;
+    }
+  }
+
+  button{
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+
+    align-items: center;
+  }
+
+}
