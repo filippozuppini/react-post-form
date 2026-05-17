@@ -6,24 +6,11 @@ function App() {
     {
       id: 1,
       author: 'Filippo Zuppini',
-      title: 'Non so cosa mettere',
-      body: 'Contenuto del post1',
+      title: 'Non so cosa scrivere',
+      body: 'Qualcuno scriva qualcosa!!!!',
       public: true,
     },
-    {
-      id: 2,
-      author: 'Mario Rossi',
-      title: 'Titolo molto interessante',
-      body: 'Contenuto dal titolo molto interessante',
-      public: true,
-    },
-    {
-      id: 3,
-      author: 'Nome Utente',
-      title: 'Titolo',
-      body: 'Contenuto',
-      public: true,
-    },
+
 
   ]
 
