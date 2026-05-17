@@ -40,10 +40,6 @@
     .title{
       display: flex;
       
-      h4{
-        margin-left: 5%;
-        color: rgb(185, 3, 3);
-      }
     }
   } 
 }

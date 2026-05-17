@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 function App() {
 
@@ -26,6 +27,31 @@ function App() {
 
   ]
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    console.log('Form iniviato');
+
+    const newPost ={
+      id: posts.length +1,
+      author: newAuthor,
+      title: newTitle,
+      body: newBody,
+    }
+
+    setPosts([...posts, newPost])
+
+    setNewAuthor('')
+    setNewTitle('')
+    setNewBody('')      
+
+  }
+
+  const [posts, setPosts] = useState(usersPosts)
+  const [newAuthor, setNewAuthor] = useState('')
+  const [newTitle, setNewTitle] = useState('')
+  const [newBody, setNewBody] = useState('')
+
+
   return (
     <>
 
@@ -38,9 +64,9 @@ function App() {
 
 
         {
-          usersPosts.map((post)=>(
+          posts.map((post)=>(
             
-            <div className="post">
+            <div className="post" key={post.id}>
               <div className="info-user">
                 <i className="bi bi-person-circle"></i>
                 <h4>{post.author}</h4>
@@ -61,20 +87,20 @@ function App() {
       </div>
 
       <div className="input-chat">
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="element">
             <label htmlFor="Nome Utente">Nome Utente</label>
-            <input type="text" />
+            <input type="text" value={newAuthor} onChange={ e => setNewAuthor(e.target.value)}/>
           </div>
 
           <div className="element">
             <label htmlFor="Titolo post">Titolo post</label>
-            <input type="text" />
+            <input type="text" value={newTitle} onChange={ e => setNewTitle(e.target.value)}/>
           </div>
 
           <div className="element">
             <label htmlFor="Contenuto del post">Contenuto del post</label>
-            <input type="text" />
+            <input type="text" value={newBody} onChange={ e => setNewBody(e.target.value)}/>
           </div>
 
           <div className="element">
