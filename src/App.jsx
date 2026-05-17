@@ -36,6 +36,7 @@ function App() {
       author: newAuthor,
       title: newTitle,
       body: newBody,
+      public: !bozza,
     }
 
     setPosts([...posts, newPost])
@@ -43,6 +44,7 @@ function App() {
     setNewAuthor('')
     setNewTitle('')
     setNewBody('')      
+    setBozza(false)
 
   }
 
@@ -50,7 +52,8 @@ function App() {
   const [newAuthor, setNewAuthor] = useState('')
   const [newTitle, setNewTitle] = useState('')
   const [newBody, setNewBody] = useState('')
-
+  const [bozza, setBozza] = useState(false)
+ 
 
   return (
     <>
@@ -72,7 +75,7 @@ function App() {
                 <h4>{post.author}</h4>
               </div>
               <div className="info-post">
-                  <h4>Bozza</h4>
+                  { !post.public && <h4 className="bozza">Bozza</h4>}
                   <h3>{post.title}</h3>
                 <p>{post.body}</p>
               </div>
@@ -104,7 +107,7 @@ function App() {
           </div>
 
           <div className="element">
-            <p>Bozza <input type="checkbox" /></p>
+            <p>Bozza <input type="checkbox" checked={bozza} onChange={ e => setBozza(e.target.checked)}/></p>
           </div>
 
           <button type="submit">Pubblica</button>
